@@ -42,8 +42,5 @@ Los modelos se evalúan utilizando métricas como el RMSE (Root Mean Squared Err
 🌐 **Visualización Geoespacial**  
 Se crean mapas interactivos para visualizar cómo los precios de las viviendas varían geográficamente utilizando las coordenadas de latitud y longitud.
 
-📉 **Reducción de Dimensionalidad**  
-Se aplican técnicas como la selección de características para mejorar la eficiencia y precisión del modelo.
-
 📝 **Conclusiones**  
 Este proyecto ofrece un marco sólido para la predicción de precios de vivienda en California. A través de modelos avanzados y visualizaciones geoespaciales, se proporciona un análisis profundo de las variables que influyen en los precios del mercado inmobiliario.
