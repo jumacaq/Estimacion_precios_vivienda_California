@@ -34,7 +34,7 @@ Se eliminan columnas irrelevantes y se normalizan las variables para asegurar qu
 🔍 **Modelado**  
 Se entrenan varios modelos de machine learning, entre ellos:
 
-- **XGBoost**: Enfoque avanzado de predicción que utiliza boosting de gradiente para optimizar el rendimiento y manejar datos complejos de manera eficiente..
+- **XGBoost**: Enfoque avanzado de predicción que utiliza boosting de gradiente para optimizar el rendimiento y manejar datos complejos de manera eficiente.
 - **lightgbm**: Algoritmo de boosting basado en gradiente que se utiliza para establecer una línea base de predicción, destacando por su rapidez y capacidad de manejo de grandes volúmenes de datos.
 
 Los modelos se evalúan utilizando métricas como el RMSE (Root Mean Squared Error), MAE (Mean Absolute Error) y el coeficiente de determinación R². 
