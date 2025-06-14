@@ -31,7 +31,7 @@ Durante el preprocesamiento se realizan las siguientes operaciones:
 📊 **Normalización de Datos**  
 Se eliminan columnas irrelevantes y se normalizan las variables para asegurar que los modelos tengan un rendimiento óptimo.
 
-🔍 **Modelado**  
+ **Modelado**  
 Se entrenan varios modelos de machine learning, entre ellos:
 
 - **XGBoost**: Enfoque avanzado de predicción que utiliza boosting de gradiente para optimizar el rendimiento y manejar datos complejos de manera eficiente.
