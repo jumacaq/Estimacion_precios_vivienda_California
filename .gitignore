@@ -1,0 +1,9 @@
+# Archivos HTML locales que no quiero subir
+mapa_base.html
+mapa_puntos.html
+
+# Notebooks temporales
+Untitled.ipynb
+
+.ipynb_checkpoints/
+.virtual_documents/
