@@ -1,37 +1,50 @@
 
-🏡 **Proyecto de Predicción de Precios de Vivienda en California**
+# 🏡 **Proyecto de Predicción de Precios de Vivienda en California**
 
-📈 **Problema de Negocio**  
+## 📈 **Problema de Negocio**  
 Este proyecto tiene como objetivo predecir los precios de las viviendas en California utilizando datos geoespaciales y características de las propiedades. Se exploran modelos de machine learning para ayudar a comprender cómo varían los precios según la ubicación y las características de las viviendas.
 
-❓ **Preguntas Clave**  
-- 🔍 **Análisis Inicial**: ¿Qué insights podemos obtener del análisis exploratorio inicial del conjunto de datos?
-- 🛠️ **Transformaciones**: ¿Qué preprocesamiento es necesario para preparar los datos correctamente?
-- 🌍 **Influencia Geográfica**: ¿Cómo afecta la ubicación (latitud, longitud, distancia a la costa) a los precios de las viviendas?
-- 🏠 **Características de las Viviendas**: ¿Qué características como el número de habitaciones o el tamaño de las viviendas influyen más en los precios?
   
-🚀 **Configuración del Ambiente**  
+## 🚀 **Configuración del Ambiente**  
 Asegúrate de tener las siguientes bibliotecas instaladas:
 
 ```bash
-pip install numpy pandas seaborn matplotlib sklearn xgboost geopy folium
+pip install numpy pandas seaborn matplotlib sklearn xgboost lightgbm folium
 ```
+  **Estructura del proyecto**
 
+```bash
+california-housing-prediction/
+├── data/
+|   └── California_Houses.csv
+├── Images/       # Contiene los gráficos de evaluación de los modelos            
+├── notebooks/
+│   └── Prediccion_precios_CA.ipynb
+├── maps/
+│   └── mapa_precios_california.html
+├── README.md
+├── requirements.txt
+└── .gitignore
+  
+```
 📥 **Obtención y Tratamiento de Datos**  
 - **Cargando la Base de Datos**: Los datos provienen del conjunto de datos de California Housing, disponible en formato CSV.
+
+  El dataset contiene 20640 filas y 14 columnas.
   
-🧹 **Tratamiento de Datos**  
+## 🧹 **Tratamiento de Datos**  
 Durante el preprocesamiento se realizan las siguientes operaciones:
 
-- 🧽 **Manejo de Valores Faltantes**: Se imputa o elimina cualquier valor faltante en las variables clave.
-- 🚫 **Eliminación de Duplicados**: Se identifican y eliminan filas duplicadas en el conjunto de datos.
-- 📉 **Manejo de Outliers**: Se utilizan técnicas como el rango intercuartílico (IQR) para gestionar valores atípicos en el precio de las viviendas.
-- 🏷️ **Codificación de Variables Categóricas**: Las variables categóricas se transforman en numéricas mediante codificación one-hot.
+- 🧽 **Manejo de Valores Faltantes**: El dataset no contiene valores faltantes ni duplicados.
+  
+- 📉 **Manejo de Outliers**: Se utilizan técnicas de truncamiento con el percentil 0.97 para gestionar valores atípicos en el precio de las viviendas.
+      Se prefirió este método al de rango interquantilico(IQR) debido a que este no se adapta bien a distribuciones asimétricas como en este caso donde hay variables con un sesgo muy           a la derecha. Esto puede llevar a descartar valores grandes válidos como "valores atípicos".
 
-📊 **Normalización de Datos**  
-Se eliminan columnas irrelevantes y se normalizan las variables para asegurar que los modelos tengan un rendimiento óptimo.
+- 📊 **Análisis de multicolinealidad**: Se evalua la multicolinealidad  de las variables usando los métodos Pearson y Spearman para medir el grado de correlación, esta evaluación se hizo  separando el dataset en dos: uno para variables geoespaciales y otra de variables socio-económicas.
 
- **Modelado**  
+  Se eliminan columnas irrelevantes tras la evaluación para asegurar que los modelos tengan un rendimiento 
+
+## 📅 **Modelado**  
 Se entrenan varios modelos de machine learning, entre ellos:
 
 - **XGBoost**: Enfoque avanzado de predicción que utiliza boosting de gradiente para optimizar el rendimiento y manejar datos complejos de manera eficiente.
