@@ -17,11 +17,11 @@ pip install numpy pandas seaborn matplotlib sklearn xgboost lightgbm folium
 california-housing-prediction/
 ├── data/
 |   └── California_Houses.csv
-├── Images/       # Contiene los gráficos de evaluación de los modelos            
+├── Images/       # Contiene los gráficos de evaluación de los modelos.            
 ├── notebooks/
 │   └── Prediccion_precios_CA.ipynb
-├── maps/
-│   └── mapa_precios_california.html
+├── docs/
+│   └── index.html  # Mapa interactivo con datos geoespaciales.
 ├── README.md
 ├── requirements.txt
 └── .gitignore
@@ -83,8 +83,14 @@ Este esta gráfica se observa la importancia de las variables con Lightgbm luego
 ![](https://github.com/jumacaq/Estimacion_precios_vivienda_California/blob/main/Images/feature_importance_lightgbm_gridsearch.png)
 
 
-🌐 **Visualización Geoespacial**  
+## 🌐 **Visualización Geoespacial**  
 Se crean mapas interactivos para visualizar cómo los precios de las viviendas varían geográficamente utilizando las coordenadas de latitud y longitud.
+En este mapa de calor interactivo hecho con Folium se puede observar que las propiedades de mayor valor(color verde) estan cerca a la costa.
 
-📝 **Conclusiones**  
-Este proyecto ofrece un marco sólido para la predicción de precios de vivienda en California. A través de modelos avanzados y visualizaciones geoespaciales, se proporciona un análisis profundo de las variables que influyen en los precios del mercado inmobiliario.
+[Haz clic aquí para ver el mapa interactivo](https://jumacaq.github.io/Estimacion_precios_vivienda_California/)
+
+
+## 📝 **Conclusiones**  
+Luego de las evaluaciones y métricas obtenidas por ambos modelos se concluye que el módelo XGBoost obtiene mejores indicadores RMSE (Root Mean Squared Error), MAE (Mean Absolute Error), el coeficiente de determinación R² y MAPE(mean_absolute_percentage_error). Como se muestra en el siguiente gráfico comparativo:
+
+![](https://github.com/jumacaq/Estimacion_precios_vivienda_California/blob/main/Images/final_comparison_xgboost_lightgbm.png)
